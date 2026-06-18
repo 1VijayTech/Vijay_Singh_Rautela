@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vijay Singh Rautela – IT & E-Commerce Coordinator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0B1020;
+    --navy-mid: #0f1628;
+    --navy-card: #131d35;
+    --blue: #3B82F6;
+    --blue-light: #60a5fa;
+    --blue-dark: #2563eb;
+    --amber: #FBBF24;
+    --amber-dim: #f59e0b;
+    --white: #F9FAFB;
+    --gray-light: #E5E7EB;
+    --charcoal: #111827;
+    --muted: #94a3b8;
+    --border: rgba(59,130,246,0.15);
+    --font-head: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 14px;
+    --shadow: 0 4px 32px rgba(0,0,0,0.35);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--gray-light);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 64px;
+    background: rgba(11,16,32,0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--blue); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--blue);
+    color: #fff !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 8px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--blue-dark) !important; color: #fff !important; }
+
+  /* ── SECTIONS ── */
+  section { padding: 90px 5vw; }
+  section:first-of-type { padding-top: 120px; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.6rem;
+  }
+  h2.section-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .section-subtitle {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+    background:
+      radial-gradient(ellipse 80% 60% at 60% 40%, rgba(59,130,246,0.12) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 10% 90%, rgba(251,191,36,0.06) 0%, transparent 60%),
+      linear-gradient(160deg, #0B1020 0%, #0d1530 100%);
+  }
+
+  /* Decorative grid lines */
+  #hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.3);
+    color: var(--blue-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 1.4rem;
+    letter-spacing: 0.02em;
+  }
+  .hero-badge::before { content: '●'; font-size: 0.55rem; color: #4ade80; }
+
+  h1.hero-title {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 5.5vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    margin-bottom: 1.4rem;
+  }
+  h1.hero-title .accent { color: var(--blue); }
+  h1.hero-title .accent2 { color: var(--amber); }
+
+  .hero-sub {
+    font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+    color: var(--muted);
+    max-width: 580px;
+    margin-bottom: 2rem;
+    line-height: 1.75;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--blue);
+    color: #fff;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.7rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(59,130,246,0.35);
+  }
+  .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(59,130,246,0.45); }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent;
+    color: var(--gray-light);
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.7rem;
+    border-radius: 10px;
+    border: 1.5px solid rgba(255,255,255,0.18);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--blue); color: var(--blue-light); background: rgba(59,130,246,0.07); transform: translateY(-2px); }
+
+  .hero-location {
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .hero-location svg { color: var(--amber); }
+
+  /* ── ABOUT ── */
+  #about { background: var(--navy); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .about-text p {
+    color: #b0bdd0;
+    margin-bottom: 1rem;
+    font-size: 1.02rem;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 2rem;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.2);
+    color: var(--blue-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 0.9rem;
+    border-radius: 100px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .chip:hover { background: rgba(59,130,246,0.16); border-color: rgba(59,130,246,0.4); }
+  .chip-icon { font-size: 0.9rem; }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .stat-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.2rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .stat-card:hover { border-color: rgba(59,130,246,0.4); transform: translateY(-3px); }
+  .stat-num {
+    font-family: var(--font-head);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--blue); }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  /* ── WHAT I DO ── */
+  #whatido { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%); }
+  .do-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+  .do-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+  }
+  .do-card:hover { border-color: rgba(59,130,246,0.4); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+  .do-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .do-icon {
+    width: 40px; height: 40px;
+    background: rgba(59,130,246,0.12);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+  .do-card-head h3 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .do-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .do-card ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.93rem;
+    color: #a8b8cc;
+    line-height: 1.55;
+  }
+  .do-card ul li::before {
+    content: '→';
+    color: var(--blue);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+    font-size: 0.85rem;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--navy); }
+  .exp-timeline { display: flex; flex-direction: column; gap: 1.4rem; }
+  .exp-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.2s;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--blue) 0%, var(--blue-dark) 100%);
+    border-radius: 4px 0 0 4px;
+  }
+  .exp-card.amber::before {
+    background: linear-gradient(180deg, var(--amber) 0%, var(--amber-dim) 100%);
+  }
+  .exp-card:hover { border-color: rgba(59,130,246,0.4); transform: translateX(4px); }
+  .exp-card.amber:hover { border-color: rgba(251,191,36,0.35); }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .exp-title {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--white);
+  }
+  .exp-badge {
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    background: rgba(59,130,246,0.12);
+    color: var(--blue-light);
+    border: 1px solid rgba(59,130,246,0.25);
+    white-space: nowrap;
+  }
+  .exp-badge.amber { background: rgba(251,191,36,0.1); color: var(--amber); border-color: rgba(251,191,36,0.25); }
+  .exp-company {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .exp-company strong { color: var(--blue-light); font-weight: 600; }
+  .exp-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .exp-card ul li {
+    font-size: 0.93rem;
+    color: #a8b8cc;
+    padding-left: 1.3rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .exp-card ul li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--blue);
+    font-size: 0.75rem;
+    top: 0.15rem;
+  }
+  .exp-card.amber ul li::before { color: var(--amber); }
+
+  /* ── SKILLS ── */
+  #skills { background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  .skills-group {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+    transition: border-color 0.25s, transform 0.2s;
+  }
+  .skills-group:hover { border-color: rgba(59,130,246,0.4); transform: translateY(-3px); }
+  .skills-group-title {
+    font-family: var(--font-head);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+  }
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .pill {
+    font-size: 0.77rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--gray-light);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .pill:hover { background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.3); color: var(--blue-light); }
+
+  /* ── EDUCATION ── */
+  #education { background: var(--navy); }
+  .edu-list { display: flex; flex-direction: column; gap: 1rem; }
+  .edu-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .edu-card:hover { border-color: rgba(59,130,246,0.4); transform: translateX(4px); }
+  .edu-icon {
+    width: 44px; height: 44px;
+    background: rgba(251,191,36,0.1);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .edu-info { flex: 1; }
+  .edu-degree {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--white);
+  }
+  .edu-school { font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
+  .edu-year {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--amber);
+    white-space: nowrap;
+    padding: 0.3rem 0.7rem;
+    background: rgba(251,191,36,0.08);
+    border-radius: 6px;
+    border: 1px solid rgba(251,191,36,0.2);
+  }
+
+  /* ── BEYOND WORK ── */
+  #beyond { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%); }
+  .beyond-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-top: 1rem;
+  }
+  .beyond-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+    transition: border-color 0.25s, transform 0.2s;
+  }
+  .beyond-card:hover { border-color: rgba(251,191,36,0.35); transform: translateY(-4px); }
+  .beyond-emoji { font-size: 2.2rem; margin-bottom: 0.8rem; }
+  .beyond-card h3 {
+    font-family: var(--font-head);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .beyond-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── CTA ── */
+  #cta {
+    background: var(--navy-mid);
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .cta-inner { max-width: 640px; margin: 0 auto; }
+  #cta h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+  }
+  #cta p { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; line-height: 1.75; }
+  .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2rem; }
+  .cta-contact {
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .cta-contact a {
+    color: var(--blue-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: flex; align-items: center; gap: 0.35rem;
+  }
+  .cta-contact a:hover { color: var(--white); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 1.5rem 5vw;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background: var(--navy);
+  }
+  footer span { color: var(--blue-light); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 5vw;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .about-grid, .do-grid, .skills-grid, .beyond-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    nav { padding: 0 4vw; }
+    .nav-links { display: none; }
+    section { padding: 70px 5vw; }
+  }
+
+  @media (max-width: 600px) {
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    h1.hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+    .hero-buttons { flex-direction: column; }
+    .hero-buttons a { text-align: center; justify-content: center; }
+    .exp-header { flex-direction: column; }
+    .edu-card { flex-direction: column; text-align: center; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    section { padding: 55px 5vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Vijay Singh Rautela<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#whatido">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#cta" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Available for E-Commerce &amp; Quick Commerce Roles</div>
+    <h1 class="hero-title">
+      IT &amp; <span class="accent">E-Commerce</span> Executive<br/>
+      Driving Smooth Online Operations &amp; <span class="accent2">Quick Commerce</span>
+    </h1>
+    <p class="hero-sub">
+      ~2.7 years of hands-on experience managing daily e-commerce and quick commerce operations — from resolving Swiggy , Zomato
+, ONDC , Magicpin &amp; New Shop App platform issues to keeping catalogues, inventory, and order workflows running without a hitch.
+    </p>
+    <div class="hero-buttons">
+      <a href="Vijay_Singh_Rautela_Cv.pdf" class="btn-primary">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1M16 12l-4 4m0 0l-4-4m4 4V4"/></svg>
+        Download Resume
+      </a>
+      <a href="#cta" class="btn-secondary">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Contact Me for Opportunities
+      </a>
+    </div>
+    <p class="hero-location">
+      <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Based in New Delhi &nbsp;·&nbsp; Open to E-Commerce &amp; Quick Commerce Roles
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2 class="section-title">Who is Vijay Singh Rautela?</h2>
+      <p>
+        I'm a skilled IT &amp; E-Commerce Executive with around 2.10 years of experience managing online operations and quick commerce workflows. I know what it takes to keep a platform running smoothly — from handling order issues to maintaining accurate product listings and supporting internal teams.
+      </p>
+      <p>
+        Day to day, I troubleshoot issues on Swiggy, Zomato, and internal systems, making sure order flow is never disrupted. I work closely with customer support, warehouse, and delivery partners to close problems fast before they become bigger headaches.
+      </p>
+      <p>
+        My strengths lie in product cataloging, inventory support, order processing, and driving resolution — backed by a genuine ownership mindset and a hunger to keep improving. I'm currently working toward an Assistant E-Commerce Manager role, with a long-term goal of growing into an E-Commerce Manager.
+      </p>
+      <div class="chips">
+        <span class="chip"><span class="chip-icon">⚡</span> E-Commerce &amp; Quick Commerce Ops</span>
+        <span class="chip"><span class="chip-icon">🔧</span> Swiggy &amp; Zomato Issue Resolution</span>
+        <span class="chip"><span class="chip-icon">💻</span> Technical &amp; IT Troubleshooting</span>
+        <span class="chip"><span class="chip-icon">🎯</span> Customer-Centric Problem Solver</span>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num">2.7<span>+</span></div>
+        <div class="stat-label">Years of E-Commerce & IT Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--amber);">5<span style="color:var(--amber);">+</span></div>
+        <div class="stat-label">Major Platforms Managed<BR>(Swiggy , Zomato , Google Business Profile , Magicpin , ONDC , Freshdesk , New Shop B2B Portal , New Shop POS & Admin Portal)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">24<span>x7</span></div>
+        <div class="stat-label">Quick Commerce Ops Mindset</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:#4ade80;">✓</div>
+        <div class="stat-label">Ready to Own Your Operations from Day One</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT I DO -->
+<section id="whatido">
+  <div class="section-label">What I Do</div>
+  <h2 class="section-title">How I Deliver Value for Your Business</h2>
+  <p class="section-subtitle">Every skill I've built translates directly into operational outcomes — fewer order failures, cleaner catalogues, and faster resolutions.</p>
+  <div class="do-grid">
+    <div class="do-card">
+      <div class="do-card-head">
+        <div class="do-icon">🛒</div>
+        <h3>Operations &amp; Platforms</h3>
+      </div>
+      <ul>
+        <li>Ensure smooth order processing across e-commerce and quick commerce channels with minimal disruption</li>
+        <li>Troubleshoot and resolve E-Commerce and internal platform issues before they cause order loss</li>
+        <li>Maintain accurate product catalogues, pricing, and availability so customers always see the right information</li>
+        <li>Coordinate with customer support, warehouse, and delivery partners to close issues fast and with clarity</li>
+      </ul>
+    </div>
+    <div class="do-card">
+      <div class="do-card-head">
+        <div class="do-icon">📊</div>
+        <h3>Support, IT &amp; Reporting</h3>
+      </div>
+      <ul>
+        <li>Provide IT and hardware support to keep teams operational and productive without delays</li>
+        <li>Handle help desk requests efficiently and escalate complex technical issues to the right people</li>
+        <li>Build Excel-based reports for orders, issues, and inventory trends to support decision-making</li>
+        <li>Support campaigns and promotional activities with reliable operational execution on the ground</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Where I've Built My Craft</h2>
+  <p class="section-subtitle">Hands-on, day-to-day experience in fast-paced e-commerce and quick commerce environments.</p>
+  <div class="exp-timeline">
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <h3 class="exp-title">IT &amp; E-Commerce Executive</h3>
+        <span class="exp-badge">Current Role</span>
+      </div>
+      <div class="exp-company"><strong>New Shop</strong> &nbsp;·&nbsp; New Delhi &nbsp;·&nbsp; Jun 2024 – Present</div>
+      <ul>
+
+        <li>Oversaw end-to-end onboarding of new retail store locations onto Swiggy, Zomato, Magicpin, and ONDC platforms, 
+ensuring accurate setup of menus, pricing, operating hours, and geo-tagging to achieve go-live timelines. </li>
+<li>Administered user accounts and access permissions across internal platforms and e-commerce portals, managing role 
+assignments and resolving login issues to maintain operational continuity for 200+ store locations. </li>
+<li> Resolved inventory and GRN discrepancies in real time by coordinating with warehouse, store managers, and vendors, 
+reducing stock mismatch incidents and preventing order cancellation due to availability errors. </li>
+<li> Managed Swiggy and Zomato operations including menu updates, item availability toggles, pricing corrections, and 
+platform-level troubleshooting, maintaining a consistent in-stock rate and minimizing listing downtime. </li>
+<li> Executed high-volume product catalog updates — adding new SKUs, updating images, editing descriptions, and correcting 
+pricing — across multiple quick commerce platforms to improve product discoverability and conversion. 
+<li> Coordinated with vendors and brand executives on stock replenishment, promotional activations, and catalogue alignment, 
+ensuring accurate product representation across all digital storefronts. </li>
+<li> Served as first-line technical support for in-office hardware, software, and connectivity issues, reducing average resolution 
+time through prompt escalation and structured follow-through. </li>
+<li> Resolved customer-facing complaints and order issues escalated from platform support teams, maintaining high satisfaction 
+scores and reducing repeat escalations through root-cause resolution. </li>
+<li> Generated daily and weekly operational reports in Microsoft Excel covering order volumes, platform performance, 
+inventory status, and issue resolution metrics to support management decision-making. </li>
+<li>Leveraged AI-powered tools and Canva for visual content creation, supporting digital marketing and product presentation 
+initiatives across quick commerce channels.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card amber">
+      <div class="exp-header">
+        <h3 class="exp-title">IT Intern</h3>
+        <span class="exp-badge amber">Internship</span>
+      </div>
+      <div class="exp-company"><strong>New Shop</strong> &nbsp;·&nbsp; New Delhi &nbsp;·&nbsp; Aug 2023 – Jun 2024</div>
+      <ul>
+        <li>Supported customer service operations, handling queries and escalations with a focus on quick and clear resolution.</li>
+        <li>Assisted with inventory management tasks including stock tracking, entry updates, and discrepancy reporting.</li>
+        <li>Helped execute in-store and platform-level promotions, gaining first-hand exposure to retail and quick commerce operations.</li>
+        <li>Learned the fundamentals of IT support, retail systems, and e-commerce platform workflows in a live business environment.</li>
+        <li>Collaborated with senior team members to understand daily operational challenges and contributed to process improvements.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills &amp; Tools</div>
+  <h2 class="section-title">My Toolkit</h2>
+  <p class="section-subtitle">A practical, growing skill set built for e-commerce operations, IT support, and digital growth.</p>
+  <div class="skills-grid">
+    <div class="skills-group">
+      <div class="skills-group-title">🛍️ E-Commerce &amp; Operations</div>
+      <div class="skill-pills">
+        <span class="pill">E-Commerce Management</span>
+        <span class="pill">Quick Commerce Ops</span>
+        <span class="pill">Product Cataloging</span>
+        <span class="pill">Inventory Support</span>
+        <span class="pill">Order Processing</span>
+        <span class="pill">Returns Handling</span>
+      
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="skills-group-title">💻 Technical &amp; IT</div>
+      <div class="skill-pills">
+        <span class="pill">Technical Troubleshooting</span>
+        <span class="pill">Hardware Support</span>
+        <span class="pill">Help Desk Support</span>
+        <span class="pill">Web App Testing</span>
+        <span class="pill">Platform Issue Resolution</span>
+        <span class="pill">System Coordination</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="skills-group-title">📈 Business &amp; Digital</div>
+      <div class="skill-pills">
+        <span class="pill">Customer Support</span>
+        <span class="pill">Excel &amp; Reporting</span>
+        <span class="pill">Social Media Mgmt</span>
+        <span class="pill">Short Video Creation</span>
+        <span class="pill">AI Visual Tools</span>
+        <span class="pill">Content Writing</span>
+        <span class="pill">Basic Web Dev</span>
+        <span class="pill">Negotiation</span>
+        <span class="pill">Coordination</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2 class="section-title">Academic Background</h2>
+  <div class="edu-list">
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-info">
+        <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+        <div class="edu-school">Indira Gandhi National Open University (IGNOU)</div>
+      </div>
+      <div class="edu-year">2023 – Present</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">🇦🇮</div>
+      <div class="edu-info">
+        <div class="edu-degree">AI Fluency : Framework & Foundation</div>
+        <div class="edu-school">By Anthropic</div>
+      </div>
+      <div class="edu-year">2026</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">🇦🇮</div>
+      <div class="edu-info">
+        <div class="edu-degree">AI Tools Workshop</div>
+        <div class="edu-school">By be10X</div>
+      </div>
+      <div class="edu-year">2026</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">📚</div>
+      <div class="edu-info">
+        <div class="edu-degree">Senior Secondary Education (12th) </div>
+        <div class="edu-school">Uttarakhand Board of School Education</div>
+      </div>
+      <div class="edu-year">2023</div>
+  </div>
+  <div class="edu-card">
+      <div class="edu-icon">📖</div>
+      <div class="edu-info">
+        <div class="edu-degree">Matriculation (10th) </div>
+        <div class="edu-school">Uttarakhand Board of School Education</div>
+      </div>
+      <div class="edu-year">2021</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BEYOND WORK -->
+<section id="beyond">
+  <div class="section-label">Beyond Work</div>
+  <h2 class="section-title">The Person Behind the Role</h2>
+  <p class="section-subtitle">Interests that sharpen my understanding of audiences, visual storytelling, and online brand presence.</p>
+  <div class="beyond-grid">
+    <div class="beyond-card">
+      <div class="beyond-emoji">✍️</div>
+      <h3>Blogging &amp; Content Writing</h3>
+      <p>Writing about topics I care about has sharpened how I communicate clearly and concisely — a skill that translates directly into better catalogue copy and sharper customer communication.</p>
+    </div>
+    <div class="beyond-card">
+      <div class="beyond-emoji">📸</div>
+      <h3>Nature Photography &amp; Videography</h3>
+      <p>Capturing visuals through photography has trained my eye for what makes a product or brand image stand out — useful when managing product listings and visual quality on platforms.</p>
+    </div>
+    <div class="beyond-card">
+      <div class="beyond-emoji">🎬</div>
+      <h3>Short-Form Video Creation</h3>
+      <p>Creating short videos for social media has given me a real understanding of what grabs attention online — relevant for e-commerce brands looking to drive discovery and engagement.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="section-label">Let's Connect</div>
+    <h2>Ready to Take Ownership of Your E-Commerce Operations</h2>
+    <p>
+      If you're hiring for an <strong style="color:var(--blue-light);">E-Commerce Executive</strong>, <strong style="color:var(--blue-light);">Assistant E-Commerce Manager</strong>, or <strong style="color:var(--blue-light);">Quick Commerce Operations</strong> role, I'd love to talk. I'm ready to step in from day one, take full ownership of daily operations, learn fast, and grow into an E-Commerce Manager with the right team behind me.
+    </p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1M16 12l-4 4m0 0l-4-4m4 4V4"/></svg>
+        Download Resume
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vijaysinghrautela9@email.com" target="_blank" class="btn-secondary">
+  Email Vijay
+</a>
+    </div>
+    <div class="cta-contact">
+      <a href="mailto:vijaysinghrautela9@gmail.com">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        vijaysinghrautela9@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/vijay-singh-rautela-08ab2735b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn Profile
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed &amp; built By <span>Vijay Singh Rautela</span> &nbsp;·&nbsp; IT &amp; E-Commerce Executive &nbsp;·&nbsp; New Delhi, India</p>
+</footer>
+
+</body>
+</html>
